@@ -3,7 +3,6 @@ import { Ship } from "../types/Ship";
 import { Direction } from "../utils/configs";
 
 interface PlaceShipProps {
-  //changePhase: (newPhase: string) => void;
   playersSelectedAxis: Direction;
   onSelectDirection: (direction: Direction) => void;
   onSelectShip: (ship: Ship) => void;
@@ -16,7 +15,6 @@ const Inventory: React.FC<PlaceShipProps> = ({
   onSelectShip,
   availableShips,
 }) => {
-  // State to manage ship placement logic
   const [selectedShip, setSelectedShip] = useState<Ship | null>(null);
 
   return (
@@ -42,7 +40,7 @@ const Inventory: React.FC<PlaceShipProps> = ({
               Vertical
             </button>
           </div>
-          {/* Iterate over the player's available ships */}
+
           {availableShips.map((ship) => (
             <div
               key={ship.id}
@@ -51,8 +49,8 @@ const Inventory: React.FC<PlaceShipProps> = ({
                 selectedShip && selectedShip.id === ship.id ? "selected" : ""
               }`}
               onClick={() => {
-                setSelectedShip(ship); // Al hacer clic, establece el barco seleccionado
-                onSelectShip(ship); // Llama a la función externa para manejar la selección del barco
+                setSelectedShip(ship);
+                onSelectShip(ship);
               }}
             >
               <span className="inventory-item-name"> {ship.id} </span>

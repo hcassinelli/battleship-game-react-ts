@@ -6,13 +6,11 @@ import Inventory from "./Inventory";
 import { Direction, BoardOwner, GamePhase } from "../utils/configs";
 
 interface PlacementModeProps {
-  gamePhase: GamePhase;
   player: Player;
   onShipsPlaced: () => void;
 }
 
 const PlacementMode: FunctionComponent<PlacementModeProps> = ({
-  gamePhase,
   player,
   onShipsPlaced,
 }) => {

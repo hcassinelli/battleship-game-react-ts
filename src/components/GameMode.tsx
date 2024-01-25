@@ -53,7 +53,7 @@ const GameMode: React.FC<GameModeProps> = ({ onGameEnd, player, opponent }) => {
         player={player}
         gamePhase={GamePhase.Game}
         showShips={true}
-        onCellClick={() => {}} // No se hace nada en clics para el tablero humano
+        onCellClick={() => {}}
         owner={BoardOwner.Player}
       />
 

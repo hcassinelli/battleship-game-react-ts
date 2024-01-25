@@ -8,11 +8,8 @@ import "./index.css";
 import { GamePhase } from "./utils/configs";
 
 function App() {
-  // State to track the current phase of the game
-  const [gamePhase, setGamePhase] = useState<GamePhase>(GamePhase.PlaceShip); // Default to 'placeShip'
+  const [gamePhase, setGamePhase] = useState<GamePhase>(GamePhase.PlaceShip);
   const [winner, setWinner] = useState<string | null>(null);
-
-  // Instantiate Players
   const [player, setPlayer] = useState<Player>(new HumanPlayer("Player 1"));
   const [opponent, setOpponent] = useState<Player>(
     new SimpleAIPlayer("Terminator"),
@@ -47,11 +44,7 @@ function App() {
   switch (gamePhase) {
     case GamePhase.PlaceShip:
       content = (
-        <PlacementMode
-          gamePhase={gamePhase}
-          player={player}
-          onShipsPlaced={finishShipPlacement}
-        />
+        <PlacementMode player={player} onShipsPlaced={finishShipPlacement} />
       );
       break;
     case GamePhase.Game:

@@ -7,7 +7,6 @@ import Grid from "./Grid";
 import { BOARD_SIZE, BoardOwner, GamePhase } from "../utils/configs";
 
 interface BoardProps {
-  //deployedShips: Ship[] | undefined;
   gamePhase: GamePhase;
   player: Player;
   onCellClick: (row: number, col: number) => void;
@@ -15,7 +14,6 @@ interface BoardProps {
   owner: BoardOwner;
 }
 
-// Definir las funciones de estilo para cada tipo de celda
 interface CellStyles {
   EmptyState: () => string;
   ShipState: (showShips: boolean) => string;
@@ -38,10 +36,9 @@ const getCellStyle = (cellState: CellState, showShips: boolean): string => {
   return styleFunc(showShips);
 };
 
-// Define the board style with CSS custom properties
 const boardStyle = {
-  "--board-rows": BOARD_SIZE, // Set rows based on BOARD_SIZE
-  "--board-columns": BOARD_SIZE, // Set columns based on BOARD_SIZE
+  "--board-rows": BOARD_SIZE,
+  "--board-columns": BOARD_SIZE,
 } as React.CSSProperties;
 
 const Board: FunctionComponent<BoardProps> = ({
@@ -53,11 +50,8 @@ const Board: FunctionComponent<BoardProps> = ({
 }) => {
   const [cells, setCells] = useState(player.getBoard().getBoardCells());
   const handleClick = (row: number, col: number) => {
-    //if (isInteractive) {
-    //console.log("handleClick:"+row,col);
     onCellClick(row, col);
     setCells([...player.getBoard().getBoardCells()]);
-    //}
   };
 
   return (

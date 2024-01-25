@@ -1,9 +1,8 @@
 import React from "react";
 import GridItem from "./GridItem";
 import { BOARD_SIZE } from "../utils/configs";
-//import './../index.css';
 interface GridProps {
-  direction: "row" | "column"; // Specify the allowed directions
+  direction: "row" | "column";
 }
 
 const Grid: React.FC<GridProps> = ({ direction }) => {
@@ -11,7 +10,6 @@ const Grid: React.FC<GridProps> = ({ direction }) => {
     if (direction === "row") {
       return Array.from({ length: BOARD_SIZE }, (_, i) => (i + 1).toString());
     } else {
-      // Generate letter labels for columns (e.g., 'A', 'B', 'C', ...)
       return Array.from({ length: BOARD_SIZE }, (_, i) =>
         String.fromCharCode(65 + i),
       );
