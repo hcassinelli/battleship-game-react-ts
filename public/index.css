@@ -1,0 +1,73 @@
+/* index.css */
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main container */
+.battleship__stage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000021;
+}
+
+/* Battleship content */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Battleship board container */
+.content--board {
+  flex: 0 0 48%;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+/* Battleship board wrapper */
+.content--board--wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Player Board title */
+.content--board h1 {
+  color: #000;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Battleship board container */
+.content--board--container {
+  position: relative;
+  flex: 1;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .content--board {
+    margin-top: 10%;
+  }
+}
+
+/* Other styles... */
